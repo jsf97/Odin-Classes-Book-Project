@@ -1,4 +1,5 @@
 let myLibrary = [];
+let main = document.getElementById('main');
 
 function createBook(title, author, pages, read) {
   this.title = title;
@@ -12,6 +13,8 @@ function createBook(title, author, pages, read) {
 
 let theHobbit = new createBook('The Hobbit', 'J.R.R. Tolkien', 295, false)
 
+let thePitufo = new createBook('Pitufo', 'No se sabe', 235, false)
+
 console.log(theHobbit.info())
 
 function addBookToLibrary(book) {
@@ -19,5 +22,15 @@ function addBookToLibrary(book) {
 }
 
 addBookToLibrary(theHobbit)
+addBookToLibrary(thePitufo)
 
-console.log(myLibrary)
+
+function showBooks() {
+  for (i = 0; i < myLibrary.length; i++) {
+    let row = document.createElement('div');
+    row.textContent = myLibrary[i]
+    main.appendChild(row)
+  }
+}
+
+showBooks()
