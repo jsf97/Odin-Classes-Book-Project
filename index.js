@@ -1,5 +1,6 @@
 let myLibrary = [];
-let main = document.getElementById('main');
+let main = document.querySelector('.right-side')
+let table = document.querySelector('.table')
 
 function createBook(title, author, pages, read) {
   this.title = title;
@@ -15,22 +16,27 @@ let theHobbit = new createBook('The Hobbit', 'J.R.R. Tolkien', 295, false)
 
 let thePitufo = new createBook('Pitufo', 'No se sabe', 235, false)
 
-console.log(theHobbit.info())
-
 function addBookToLibrary(book) {
-  myLibrary.push(book.title);
+  myLibrary.push(book);
 }
 
-addBookToLibrary(theHobbit)
-addBookToLibrary(thePitufo)
+addBookToLibrary(theHobbit);
+addBookToLibrary(thePitufo);
 
 
 function showBooks() {
-  for (i = 0; i < myLibrary.length; i++) {
-    let row = document.createElement('div');
-    row.textContent = myLibrary[i]
-    main.appendChild(row)
-  }
+  myLibrary.forEach((e) => {
+    let values = Object.values(e);
+    let newRow = document.createElement('tr');
+    for(let i = 0; i < values.length - 1; i++) {
+      let newData = document.createElement('td');
+      newData.textContent = values[i];
+      newRow.appendChild(newData);
+    }
+    table.appendChild(newRow);
+  });
 }
 
-showBooks()
+showBooks();
+
+button = document.createElement = 'button';
