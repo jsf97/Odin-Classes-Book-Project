@@ -1,6 +1,8 @@
 let myLibrary = [];
 let main = document.querySelector('.right-side')
 let table = document.querySelector('.table')
+let addBookButton = document.getElementById('submit-book');
+
 
 function createBook(title, author, pages, read) {
   this.title = title;
@@ -39,4 +41,7 @@ function showBooks() {
 
 showBooks();
 
-button = document.createElement = 'button';
+
+addBookButton.addEventListener('click', (e) => {
+  alert('abc')
+})
